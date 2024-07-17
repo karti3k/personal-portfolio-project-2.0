@@ -31,3 +31,12 @@ body {
     text-wrap: balance;
   }
 }
+
+/* Apply Jua font to specific elements */
+.jua-font {
+  font-family: var(--font-jua);
+}
+
+.custom-svg-color-for-darkmode {
+  filter: brightness(0) saturate(100%) invert(74%) sepia(26%) saturate(5449%) hue-rotate(190deg) brightness(98%) contrast(87%);
+}
