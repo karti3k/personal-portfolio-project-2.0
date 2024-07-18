@@ -1,9 +1,28 @@
-import Image from "next/image";
+'use client';
+import React, { useEffect, useState } from 'react';
+import NavBar from '@/components/NavBar';
+import About from '@/components/About';
 
-export default function Home() {
+const App = () => {
+  const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+  // Toggle dark mode
+  const toggleDarkMode = () => {
+    setIsDarkMode(!isDarkMode);
+  };
+
+  // Detect system dark mode preference on initial render
+  useEffect(() => {
+    const systemPrefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    setIsDarkMode(systemPrefersDark);
+  }, []);
+
   return (
-    <main>
-      
-    </main>
+    <div className={isDarkMode ? 'dark' : ''}>
+      <NavBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
+      <About isDarkMode={isDarkMode} />
+    </div>
   );
-}
+};
+
+export default App;
