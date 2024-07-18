@@ -51,7 +51,7 @@ const NavBar: React.FC = () => {
   }, []);
 
   return (
-    <nav className={`${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-20 flex items-center justify-between px-8 md:px-12 lg:px-32`}>
+    <nav className={`${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-20 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font`}>
 
       <button 
         className={`rounded-3xl md:pr-2 border-2 border-white hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-black-blue dark:text-custom-black-blue dark:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 hover:text-slate-600'}`}
