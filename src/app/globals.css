@@ -37,6 +37,27 @@ body {
   font-family: var(--font-jua);
 }
 
+.anekDevanagari-font{
+  font-family: var(--font-anek-devanagari);
+}
+
 .custom-svg-color-for-darkmode {
-  filter: brightness(0) saturate(100%) invert(74%) sepia(26%) saturate(5449%) hue-rotate(190deg) brightness(98%) contrast(87%);
+  filter: brightness(0) saturate(100%) invert(73%) sepia(29%) saturate(4666%) hue-rotate(156deg) brightness(102%) contrast(95%);
+
+}
+
+@keyframes float {
+  0% {
+      transform: translateY(0);
+  }
+  50% {
+      transform: translateY(-10px);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
+
+.float-animation {
+  animation: float 4s ease-in-out infinite;
 }

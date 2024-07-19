@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import { Jua } from 'next/font/google';
+import { Inter, Jua, Anek_Devanagari } from 'next/font/google';
 import "./globals.css";
 
 const jua = Jua({
@@ -9,6 +8,14 @@ const jua = Jua({
   variable: '--font-jua',
   weight: "400",
 });
+
+const anekDevanagari = Anek_Devanagari({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-anek-devanagari',
+  weight: ["100", "200", "300", "400","500", "600", "700", "800"],
+});
+
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -23,7 +30,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} ${jua.variable}`}>
+       <body className={`${inter.className} ${jua.variable} ${anekDevanagari.variable}`}>
         
         {children}
         </body>

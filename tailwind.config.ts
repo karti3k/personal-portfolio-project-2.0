@@ -9,6 +9,9 @@ const config: Config = {
   darkMode: 'media', 
   theme: {
     extend: {
+      boxShadow: {
+        'white-lg': '0 4px 8px rgba(255, 255, 255, 0.5)',
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -18,7 +21,9 @@ const config: Config = {
         'custom-blue': '#60A5FA',
         'custom-blue-40': 'rgba(198, 224, 255, 0.4)',
         'custom-black': '#121212',
-        'custom-black-blue': '#85ADF4',
+        'custom-blue-green': '#66d5e3',
+        'custom-green': '#89a789',
+        'custom-sky-blue': '#b0d8f9',
       }
     },
   },
