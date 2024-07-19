@@ -60,7 +60,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                 </div>
             </div>
             <div className='w-1/2 h-[75%] flex flex-col justify-center items-center'>
-                <Image className={`lg:w-[52%] w-[80%] float-animation md:mt-28 lg:mt-12 ${isDarkMode?'drop-shadow-2xl':'drop-shadow-lg'}`} src={Robo} alt='white robo' />
+                <Image className={`lg:w-[52%] w-[80%] float-animation md:mt-28 lg:mt-20 ${isDarkMode?'drop-shadow-2xl':'drop-shadow-lg'}`} src={Robo} alt='white robo' />
             </div>
         </main>
     );
