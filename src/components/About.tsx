@@ -1,13 +1,15 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import Image from 'next/image';
-import Robo from '@/assets/Robo.png';
+import Image, { StaticImageData } from 'next/image';
+import RoboLight from '@/assets/robo_light.png';
+import RoboDark from '@/assets/robo_dark.png';
 
 interface AboutProps {
     isDarkMode: boolean;
 }
 
 const About: React.FC<AboutProps> = ({ isDarkMode }) => {
+    const [modeButtonIcon, setModeButtonIcon] = useState<string | StaticImageData>(RoboLight);
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
@@ -44,23 +46,27 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
         }
     };
 
+    useEffect(() => {
+        setModeButtonIcon(isDarkMode ? RoboDark : RoboLight);
+      }, [isDarkMode]);
+
     return (
-        <main className={`w-full lg:h-screen h-auto flex md:pt-32 md:pb-44 lg:pt-0 lg:pb-0  ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'}`}>
-            <div className='w-1/2'>
-                <div className='p-4 flex flex-col pl-8 md:pl-12 lg:pl-32 pt-12'>
-                    <span className={`jua-font text-5xl opacity-10 h-20 drop-shadow-lg ${isDarkMode ? 'text-custom-green' : 'text-white'}`}>About:</span>
-                    <h1 className={`jua-font text-4xl w-full h-24 drop-shadow-lg`}>
-                        <span className={`${isDarkMode?'text-custom-sky-blue':'text-white'
+        <main className={`w-full lg:h-screen md:h-auto h-screen flex md:gap-0 flex-col md:flex-row md:pt-32 lg:pt-16 md:pb-44 lg:pt-0 lg:pb-0  ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'}`}>
+            <div className='md:w-1/2 w-full '>
+                <div className='pt-24 md:pt-0 md:p-4 flex flex-col pl-8 pr-8 md:pr-0 md:pl-12 lg:pl-32 pt-12'>
+                    <span className={`jua-font text-4xl md:text-5xl opacity-10 h-16 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-custom-green' : 'text-white'}`}>About:</span>
+                    <h1 className={`jua-font text-2xl md:text-4xl w-full h-24 md:h-32 lg:h-28 drop-shadow-lg`}>
+                        <span className={`text-3xl md:text-4xl ${isDarkMode?'text-custom-sky-blue':'text-white'
                         }`}>{`Hi! I'm Kartik Bhatia.`} </span>
                         <span className={`txt-rotate ${isDarkMode?'text-custom-blue-green':'text-custom-sky-blue'}`} data-period="1000" data-rotate='[ "A Front-End Web Developer", "A Graphic Designer", "A Video Editor" ]'>
                             <span className="block">{text}</span>
                         </span>
                     </h1>
-                    <p className={`text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
+                    <p className={`text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg pb-6 md:pb-0`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
                 </div>
             </div>
-            <div className='w-1/2 h-[75%] flex flex-col justify-center items-center'>
-                <Image className={`lg:w-[52%] w-[80%] float-animation md:mt-28 lg:mt-20 ${isDarkMode?'drop-shadow-2xl':'drop-shadow-lg'}`} src={Robo} alt='white robo' />
+            <div className='w-full md:w-1/2 h-[45%] md:h-[75%] flex justify-start md:justify-center items-center'>
+                <Image className={`md:-mt-0 pl-[5%] md:pl-0 lg:w-[52%] md:w-[80%] w-[65%] float-animation md:mt-32 lg:mt-0 ${isDarkMode?'drop-shadow-2xl':'drop-shadow-lg'}`} src={modeButtonIcon} alt='white robo' />
             </div>
         </main>
     );

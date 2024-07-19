@@ -86,22 +86,22 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
         </button>
 
         {isMenuOpen && (
-          <div ref={menuRef} className={`absolute right-0 mt-5 w-48 ${isDarkMode ? 'dark:bg-black' : 'bg-custom-blue-40'} rounded-md shadow-lg z-20`}>
-            <Link href={''} className={`${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-4 py-2 text-sm`}>
-              <Image src={LinkedInSVG} alt='s-1' width={18} height={18} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
-              -LinkedIn
+          <div ref={menuRef} className={`absolute flex flex-col items-start right-0 pt-2 mt-5 w-47 ${isDarkMode ? 'dark:bg-black' : 'bg-custom-blue-40'} rounded-md shadow-lg z-20`}>
+            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-2 md:px-4 md:py-1 text-sm`}>
+              <Image src={LinkedInSVG} alt='s-1' width={19} height={19} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+              LinkedIn
             </Link>
-            <Link href={''} className={`${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-4 py-2 text-sm`}>
-              <Image src={GitHubSVG} alt='s-2' width={21} height={21} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : 'text-white'}`} />
-              -GitHub
+            <Link href={''} className={`ml-1 md:ml-0  flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
+              <Image src={GitHubSVG} alt='s-2' width={20} height={20} className={`inline hover:scale-110 md:pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : 'text-white'}`} />
+              GitHub
             </Link>
-            <Link href={''} className={`${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-4 py-2 text-sm`}>
-              <Image src={YouTubeSVG} alt='s-3' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
-              -YouTube
+            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
+              <Image src={YouTubeSVG} alt='s-3' width={20} height={20} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+              YouTube
             </Link>
-            <Link href={''} className={`${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-4 py-2 text-sm`}>
-              <Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
-              -Behance
+            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
+              <Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+              Behance
             </Link>
           </div>
         )}
