@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import NavBar from '@/components/NavBar';
 import About from '@/components/About';
+import Creations from '@/components/Creations';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -21,6 +22,7 @@ const App = () => {
     <div className={isDarkMode ? 'dark' : ''}>
       <NavBar isDarkMode={isDarkMode} toggleDarkMode={toggleDarkMode} />
       <About isDarkMode={isDarkMode} />
+      <Creations isDarkMode={isDarkMode}/>
     </div>
   );
 };
