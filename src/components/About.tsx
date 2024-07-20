@@ -14,7 +14,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const toRotate = ["A Front-End Web Developer!", "A Graphic Designer..", "A Video Editor..."];
+    const toRotate = ["A Front-End Web Developer", "A Graphic Designer..", "A Video Editor..."];
     const period = 2000;
 
     useEffect(() => {
