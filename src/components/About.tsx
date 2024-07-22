@@ -64,7 +64,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                     <p className={`text-white text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg pb-6 md:pb-0`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
                 </div>
             </div>
-            <div className='pt-2 w-full md:w-1/2 h-max md:h-[75%] flex justify-start md:justify-center items-start lg:items-center'>
+            <div className='w-full md:w-1/2 h-max md:h-[75%] flex justify-start md:justify-center items-start lg:items-center'>
                 <Image className={`md:-mt-0 pl-[5%] md:pl-0 lg:w-[52%] md:w-[80%] w-[65%] float-animation md:mt-32 lg:mt-16 ${isDarkMode ? 'drop-shadow-2xl' : 'drop-shadow-lg'}`} src={modeButtonIcon} alt='white robo' />
             </div>
         </main>
