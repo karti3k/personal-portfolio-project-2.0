@@ -70,7 +70,7 @@ const Footer: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           className={`hidden md:flex text-xs md:text-sm px-0 md:px-2 py-1 font-semibold rounded-3xl border-2 ${isDarkMode ? 'border-custom-blue-green bg-black text-custom-blue-green' : 'bg-custom-blue-40 border-white text-white'}`}
           onClick={toggleConnectMenu}
         >
-          Let's connect
+          Let&apos;s connect
         </button>
 
         <div className="text-sm text-center text-white md:hidden mt-4">
