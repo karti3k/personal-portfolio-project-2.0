@@ -79,7 +79,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
               
               {/* Button to toggle experience item open/close */}
               <button
-                className="flex justify-between items-center w-full font-normal"
+                className={`${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'} flex justify-between items-center w-full font-normal`}
                 onClick={() => toggleExperience(index)}
               >
                 <div className="flex items-center justify-center px-2">
