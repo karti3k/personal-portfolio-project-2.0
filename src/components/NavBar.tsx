@@ -50,13 +50,14 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
 
   return (
-    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'} w-full h-12 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'border-custom-blue-green' : 'border-white'}`}>
+    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'border-custom-blue-green' : 'border-white'}`}>
       <button
         className={`mb-1 rounded-3xl md:pr-2 border-2 border-white hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 hover:text-slate-600'}`}
         onClick={toggleDarkMode}
       >
         <Image src={modeButtonIcon} alt='sun/moon' className='rounded-3xl inline md:pr-1 w-7 h-7 md:w-11 md:h-10' />
         <span className='hidden sm:inline'>Change Theme</span>
+        <span className='md:hidden pr-2'>Theme</span>
       </button>
 
       <div className='flex-1 flex justify-center'>
