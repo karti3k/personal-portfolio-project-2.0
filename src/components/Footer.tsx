@@ -18,7 +18,7 @@ const Footer: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full px-8 md:px-12 lg:px-32 py-4 jua-font border-t ${isDarkMode ? 'border-custom-blue-green' : 'border-white'}`}>
+    <footer className={`w-full px-8 md:px-12 lg:px-32 py-4 jua-font border-t ${isDarkMode ? 'bg-custom-black border-custom-blue-green' : 'bg-custom-blue border-white'}`}>
       <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
         {/* Mobile View: Text with underline for 'Go to top' */}
         <button
