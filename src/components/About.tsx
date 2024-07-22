@@ -51,7 +51,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
       }, [isDarkMode]);
 
     return (
-        <main className={`w-full lg:h-screen md:h-auto h-screen flex md:gap-0 flex-col md:flex-row md:pt-32 lg:pt-16 md:pb-44 lg:pt-0 lg:pb-0  ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'}`}>
+        <main id='about-section' className={`w-full lg:h-screen md:h-auto h-screen flex md:gap-0 flex-col md:flex-row md:pt-32 lg:pt-16 md:pb-44 lg:pt-0 lg:pb-0  ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'}`}>
             <div className='md:w-1/2 w-full '>
                 <div className='pt-24 md:pt-0 md:p-4 flex flex-col pl-8 pr-8 md:pr-0 md:pl-12 lg:pl-32 pt-12'>
                     <span className={`jua-font text-4xl md:text-5xl opacity-10 h-16 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-custom-green' : 'text-white'}`}>About:</span>
@@ -65,7 +65,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                     <p className={`text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg pb-6 md:pb-0`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
                 </div>
             </div>
-            <div className='w-full md:w-1/2 h-[45%] md:h-[75%] flex justify-start md:justify-center items-center'>
+            <div className='w-full md:w-1/2 h-screen md:h-[75%] flex justify-start md:justify-center items-center'>
                 <Image className={`md:-mt-0 pl-[5%] md:pl-0 lg:w-[52%] md:w-[80%] w-[65%] float-animation md:mt-32 lg:mt-0 ${isDarkMode?'drop-shadow-2xl':'drop-shadow-lg'}`} src={modeButtonIcon} alt='white robo' />
             </div>
         </main>

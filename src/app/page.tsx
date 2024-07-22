@@ -4,6 +4,7 @@ import NavBar from '@/components/NavBar';
 import About from '@/components/About';
 import Creations from '@/components/Creations';
 import Experience from '@/components/Experience';
+import Footer from '@/components/Footer';
 
 const App = () => {
   const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
@@ -25,6 +26,7 @@ const App = () => {
       <About isDarkMode={isDarkMode} />
       <Creations isDarkMode={isDarkMode}/>
       <Experience isDarkMode={isDarkMode}/>
+      <Footer isDarkMode={isDarkMode}/>
     </div>
   );
 };

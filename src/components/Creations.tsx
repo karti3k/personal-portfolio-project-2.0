@@ -94,7 +94,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
   const getProjects = () => projectData.filter((project) => project.category === selected);
 
   return (
-    <section
+    <section id='creations-section'
       className={`pt-24 md:pt-0 -mt-28 md:-mt-12 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-center ${
         isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'
       } jua-font`}
@@ -149,13 +149,13 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
                 className="w-full h-full rounded-3xl"
               />
               <div className="hidden group-hover:flex absolute bottom-4 w-full justify-evenly">
-                <Link href={project.link} passHref>
+                <Link href={project.link} passHref target="_blank">
                   <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'bg-black text-custom-blue-green border-custom-blue-green hover:bg-custom-blue-green hover:text-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
                     Learn More
                   </button>
                 </Link>
                 {project.liveDemo && (
-                  <Link href={project.liveDemo} passHref>
+                  <Link href={project.liveDemo} passHref target="_blank">
                     <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'bg-black text-custom-blue-green border-custom-blue-green hover:bg-custom-blue-green hover:text-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
                       Live Demo
                     </button>

@@ -10,6 +10,7 @@ import LinkedInSVG from '@/assets/linkedin.svg';
 import GitHubSVG from '@/assets/github.svg';
 import YouTubeSVG from '@/assets/youtube.svg';
 import BehanceSVG from '@/assets/behance.svg';
+import { Link as ScrollLink } from 'react-scroll';
 import Link from 'next/link';
 
 interface NavBarProps {
@@ -22,6 +23,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
   const [modeButtonIcon, setModeButtonIcon] = useState<string | StaticImageData>(SunGIF);
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   const menuRef = useRef<HTMLDivElement>(null);
+  const [navbarOpacity, setNavbarOpacity] = useState(1);
 
   // Update the mode button icon based on isDarkMode state
   useEffect(() => {
@@ -46,10 +48,25 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
     };
   }, []);
 
+  // Update navbar opacity on scroll
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollY = window.scrollY;
+      // Adjust the threshold and opacity transition as needed
+      const opacity = 0.97;
+      setNavbarOpacity(opacity);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className={`${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-20 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'border-custom-blue-green': 'border-white'}`}>
-      <button 
-        className={`rounded-3xl md:pr-2 border-2 border-white hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 hover:text-slate-600'}`}
+    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full h-12 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'border-custom-blue-green' : 'border-white'}`}  style={{ opacity: navbarOpacity, transition: 'opacity 0.3s ease-in-out' }}>
+      <button
+        className={`mb-1 rounded-3xl md:pr-2 border-2 border-white hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 hover:text-slate-600'}`}
         onClick={toggleDarkMode}
       >
         <Image src={modeButtonIcon} alt='sun/moon' className='rounded-3xl inline md:pr-1 w-7 h-7 md:w-11 md:h-10' />
@@ -58,28 +75,44 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
       <div className='flex-1 flex justify-center'>
         <div className='flex gap-6 lg:text-lg'>
-          <Link href={''} className={`md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'About' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue hover:border-white')}`} onClick={() => setSelected('About')}>
+          <ScrollLink
+            to="about-section"
+            smooth={true}
+            duration={500}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'About' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue')}`}
+            onClick={() => setSelected('About')}
+          >
             <Image src={AboutSVG} alt='i-1' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
             <span className='pl-1 hidden sm:inline'>About</span>
-          </Link>
+          </ScrollLink>
 
-          <Link href={''} className={`md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Creations' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue hover:border-white')}`}
-            onClick={() => setSelected('Creations')}>
+          <ScrollLink
+            to="creations-section"
+            smooth={true}
+            duration={500}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Creations' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue ')}`}
+            onClick={() => setSelected('Creations')}
+          >
             <Image src={CreationsSVG} alt='icon2' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
             <span className='pl-1 hidden sm:inline'>Creations</span>
-          </Link>
+          </ScrollLink>
 
-          <Link href={''} className={`md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Experience' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue hover:border-white')}`}
-            onClick={() => setSelected('Experience')}>
+          <ScrollLink
+            to="experience-section"
+            smooth={true}
+            duration={500}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Experience' ? (isDarkMode ? 'bg-black md:bg-custom-black dark:border-custom-blue-green dark:text-custom-blue-green dark:hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-custom-blue border-white hover:border-white') : (isDarkMode ? 'border-custom-blue dark:border-custom-black dark:hover:border-custom-black dark:text-custom-blue-green' : 'border-custom-blue')}`}
+            onClick={() => setSelected('Experience')}
+          >
             <Image src={ExperienceSVG} alt='icon3' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
             <span className='pl-1 hidden sm:inline'>Experience</span>
-          </Link>
+          </ScrollLink>
         </div>
       </div>
 
       <div className='relative'>
-        <button 
-          className={`text-sm px-2 py-1 font-semibold rounded-3xl border-2 sm:hidden ${isDarkMode ? 'border-custom-blue-green bg-black text-custom-blue-green' : 'bg-custom-blue-40 border-white text-white' }`}
+        <button
+          className={`mb-1 text-sm px-2 py-1 font-semibold rounded-3xl border-2 sm:hidden ${isDarkMode ? 'border-custom-blue-green bg-black text-custom-blue-green' : 'bg-custom-blue-40 border-white text-white'}`}
           onClick={toggleMenu}
         >
           Connect
@@ -87,41 +120,36 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
         {isMenuOpen && (
           <div ref={menuRef} className={`absolute flex flex-col items-start right-0 pt-2 mt-5 w-47 ${isDarkMode ? 'dark:bg-black' : 'bg-custom-blue-40'} rounded-md shadow-lg z-20`}>
-            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-2 md:px-4 md:py-1 text-sm`}>
+            <Link href={'https://www.linkedin.com/in/kartik-bhatia-13a172229/'} target="_blank" className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block px-2 md:px-4 md:py-1 text-sm`}>
               <Image src={LinkedInSVG} alt='s-1' width={19} height={19} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
               LinkedIn
             </Link>
-            <Link href={''} className={`ml-1 md:ml-0  flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
+            <Link href={'https://github.com/karti3k'} target="_blank" className={`ml-1 md:ml-0  flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
               <Image src={GitHubSVG} alt='s-2' width={20} height={20} className={`inline hover:scale-110 md:pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : 'text-white'}`} />
               GitHub
             </Link>
-            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
+            <Link href={'https://www.youtube.com/@code_flux'} target="_blank" className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
               <Image src={YouTubeSVG} alt='s-3' width={20} height={20} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
               YouTube
             </Link>
-            <Link href={''} className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}>
-              <Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
-              Behance
-            </Link>
-          </div>
-        )}
-
-        <div className='hidden sm:flex gap-3'>
-          <Link href={''}>
-            <Image src={LinkedInSVG} alt='s-1' width={19} height={19} className={`hover:scale-110 drop-shadow-lg ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+            <Link href={'https://www.behance.net/kartikbhatia23'} target="_blank" className={`ml-1 md:ml-0 flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green dark:hover:bg-gray-800' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}><Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />Behance</Link>
+          </div>)}
+        <div className='hidden sm:flex items-center'>
+          <Link href={'https://www.linkedin.com/in/kartik-bhatia-13a172229/'} target="_blank" className='pr-2 md:pr-3'>
+            <Image src={LinkedInSVG} alt='i-1' width={21} height={21} className={`inline hover:scale-110 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
           </Link>
-          <Link href={''}>
-            <Image src={GitHubSVG} alt='s-2' width={21} height={21} className={`hover:scale-110 drop-shadow-lg ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+          <Link href={'https://github.com/karti3k'} target="_blank" className='pr-2 md:pr-3'>
+            <Image src={GitHubSVG} alt='i-2' width={21} height={21} className={`inline hover:scale-110 ${isDarkMode ? 'custom-svg-color-for-darkmode' : 'text-white'}`} />
           </Link>
-          <Link href={''}>
-            <Image src={YouTubeSVG} alt='s-3' width={19} height={19} className={`hover:scale-110 drop-shadow-lg ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+          <Link href={'https://www.youtube.com/@code_flux'} target="_blank" className='pr-2 md:pr-3'>
+            <Image src={YouTubeSVG} alt='i-3' width={21} height={21} className={`inline hover:scale-110 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
           </Link>
-          <Link href={''}>
-            <Image src={BehanceSVG} alt='s-4' width={21} height={21} className={`hover:scale-110 pt-1 drop-shadow-lg ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
+          <Link href={'https://www.behance.net/kartikbhatia23'} target="_blank">
+            <Image src={BehanceSVG} alt='i-4' width={21} height={21} className={`inline hover:scale-110 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
           </Link>
         </div>
       </div>
-    </nav>
+    </nav >
   );
 };
 
