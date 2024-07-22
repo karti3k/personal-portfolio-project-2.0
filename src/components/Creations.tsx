@@ -95,22 +95,23 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
 
   return (
     <section id='creations-section'
-      className={`-mt-32 md:-mt-12 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-center ${
+      className={`-mt-48 md:-mt-12 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-center ${
         isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'
       } jua-font`}
     >
-      <h2
+      
+      <div
+        className={`mt-1 w-full lg:h-[70%] h-screen border rounded-3xl flex flex-col items-center py-6 ${
+          isDarkMode ? 'bg-custom-black border-custom-blue-green' : 'bg-custom-blue border-white'
+        }`}
+      >
+        <h2
         className={`text-center md:text-left jua-font text-4xl md:text-5xl pb-8 opacity-10 md:h-20 drop-shadow-lg ${
           isDarkMode ? 'text-custom-green' : 'text-white'
         }`}
       >
         Creations:
       </h2>
-      <div
-        className={`mt-1 w-full lg:h-[70%] h-screen border rounded-3xl flex flex-col items-center py-6 ${
-          isDarkMode ? 'bg-custom-black border-custom-blue-green' : 'bg-custom-blue border-white'
-        }`}
-      >
         <div
           className={`${
             isDarkMode ? 'text-custom-blue-green border-custom-blue-green' : 'text-white border-white'
