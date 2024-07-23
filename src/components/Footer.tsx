@@ -18,11 +18,11 @@ const Footer: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className={`w-full px-8 md:px-12 lg:px-32 py-4 jua-font border-t ${isDarkMode ? 'bg-custom-black border-custom-blue-green' : 'bg-custom-blue border-white'}`}>
+    <footer className={`w-full px-8 md:px-12 lg:px-32 py-4 jua-font border-t ${isDarkMode ? 'dark:bg-custom-black dark:border-custom-blue-green' : 'bg-custom-blue border-white'}`}>
       <div className="flex flex-col md:flex-row justify-center md:justify-between items-center">
         {/* Mobile View: Text with underline for 'Go to top' */}
         <button
-          className={`text-lg md:text-sm px-0 md:px-2 py-1 font-semibold rounded-3xl border-2 ${isDarkMode ? 'border-custom-blue-green bg-black text-custom-blue-green hidden md:block' : 'bg-custom-blue-40 border-white text-white hidden md:block'}`}
+          className={`text-lg md:text-sm px-0 md:px-2 py-1 font-semibold rounded-3xl border-2 ${isDarkMode ? 'dark:border-custom-blue-green dark:bg-black dark:text-custom-blue-green hidden md:block' : 'bg-custom-blue-40 border-white text-white hidden md:block'}`}
           onClick={() => scroll.scrollToTop({ smooth: true })}
         >
           Go to top

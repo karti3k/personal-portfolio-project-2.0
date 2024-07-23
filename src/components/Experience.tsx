@@ -67,7 +67,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'} jua-font pb-10`}>
+    <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} jua-font pb-10`}>
       <h2 className={`jua-font text-4xl md:text-5xl pb-8 opacity-30 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-custom-green' : 'text-white'}`}>
         Experience:
       </h2>
@@ -75,25 +75,25 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
       <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between w-full space-y-4 md:space-y-0">
         {experiences.map((experience, index) => (
           <div key={index} className="w-full md:w-[30%] space-y-4">
-            <li className={`list-none py-4 px-2 rounded-xl ${isDarkMode ? 'bg-custom-black border border-custom-blue-green text-custom-blue-green' : 'bg-custom-blue border border-white text-white'}`}>
+            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-black border border-custom-blue-green dark:text-custom-blue-green' : 'bg-[#a4ccfc] border border-white text-white'}`}>
               
               {/* Button to toggle experience item open/close */}
               <button
-                className={`${isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'} flex justify-between items-center w-full font-normal`}
+                className={`${isDarkMode ? 'dark:bg-black' : 'bg-[#a4ccfc]'} flex justify-between items-center w-full font-normal`}
                 onClick={() => toggleExperience(index)}
               >
-                <div className="flex items-center justify-center px-2">
+                <div className="flex items-center justify-center px-2 drop-shadow-md">
                   <Image src={experience.companyLogo} alt={`${experience.companyName} logo`} width={40} height={40} className="object-contain pr-2" />
                   <span>{experience.companyName}</span>
                 </div>
-                <span className='px-4'>{experience.title}</span>
-                <span className="ml-2">{openIndex === index ? '-' : '+'}</span>
+                <span className='px-4 drop-shadow-lg'>{experience.title}</span>
+                <span className="ml-2 drop-shadow-lg">{openIndex === index ? '-' : '+'}</span>
               </button>
 
               {/* Section to expand/collapse experience details */}
               <div className={`overflow-hidden transition-all ${openIndex === index ? 'max-h-full' : 'max-h-0'}`}>
-                <span className="text-xs pl-2 mt-2">{experience.duration}</span>
-                <ul className="list-disc p-4 space-y-2 anekDevanagari-font text-sm">
+                <span className="text-xs pl-2 mt-2 drop-shadow-md">{experience.duration}</span>
+                <ul className="list-disc p-4 space-y-2 anekDevanagari-font text-sm drop-shadow-lg">
                   {experience.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}
