@@ -44,7 +44,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
       imageLight: FrontendImage2Light,
       imageDark: FrontendImage2Dark,
       link: 'https://github.com/karti3k/personal-portfolio-project-2.0/blob/main/README.md',
-      liveDemo: '',
+      liveDemo: 'https://bhatiakartik.vercel.app/',
     },
     {
       category: 'Front-End Dev',
