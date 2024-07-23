@@ -92,7 +92,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
 
               {/* Section to expand/collapse experience details */}
               <div className={`overflow-hidden transition-all ${openIndex === index ? 'max-h-full' : 'max-h-0'}`}>
-                <span className="text-xs pl-2">{experience.duration}</span>
+                <span className="text-xs pl-2 mt-2">{experience.duration}</span>
                 <ul className="list-disc p-4 space-y-2 anekDevanagari-font text-sm">
                   {experience.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
