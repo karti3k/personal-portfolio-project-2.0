@@ -95,7 +95,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
 
   return (
     <section id='creations-section'
-      className={`md:-mt-12 lg:-mt-4 pt-6 md:pt-0 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-start ${
+      className={`md:-mt-12 pt-6 md:pt-0 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-start ${
         isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'
       } jua-font`}
     >
