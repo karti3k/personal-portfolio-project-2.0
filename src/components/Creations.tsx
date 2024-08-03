@@ -27,19 +27,16 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
       category: 'Front-End Dev',
       image: FrontendImage1Light,
       link: 'https://github.com/karti3k/my-personal-portfolio-project/blob/main/README.md',
-      liveDemo: 'https://kartikbhatia.vercel.app/',
     },
     {
       category: 'Front-End Dev',
       image: FrontendImage2Light,
       link: 'https://github.com/karti3k/personal-portfolio-project-2.0/blob/main/README.md',
-      liveDemo: 'https://bhatiakartik.vercel.app/',
     },
     {
       category: 'Front-End Dev',
       image: FrontendImage3Light,
       link: 'https://github.com/karti3k/Employee-Activity-Dashboard/blob/main/README.md',
-      liveDemo: '',
     },
     {
       category: 'Graphic Design',
@@ -121,14 +118,14 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
           {getProjects().map((project, index) => (
             <div
               key={index}
-              className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
+              className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-full relative`}
             >
               <Image
                 src={project.image}
                 alt={`${selected} project ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
-                className="w-full h-full rounded-3xl"
+                className="w-full h-full rounded-full"
               />
               <div className="hidden group-hover:flex absolute bottom-4 w-full justify-evenly">
                 <Link href={project.link} passHref target="_blank">
@@ -136,13 +133,6 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
                     Learn More
                   </button>
                 </Link>
-                {project.liveDemo && (
-                  <Link href={project.liveDemo} passHref target="_blank">
-                    <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'dark:bg-black dark:text-custom-blue-green dark:border-custom-blue-green hover:bg-custom-blue-green hover:text-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
-                      Live Demo
-                    </button>
-                  </Link>
-                )}
               </div>
             </div>
           ))}

@@ -79,14 +79,14 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
               
               {/* Button to toggle experience item open/close */}
               <button
-                className={`${isDarkMode ? 'dark:bg-black' : 'bg-[#a4ccfc]'} flex justify-between items-center w-full font-normal`}
+                className={`${isDarkMode ? 'dark:bg-black' : 'bg-[#a4ccfc]'} flex justify-between items-center w-full font-normal p-2`}
                 onClick={() => toggleExperience(index)}
               >
                 <div className="flex items-center justify-center px-2 drop-shadow-md">
-                  <Image src={experience.companyLogo} alt={`${experience.companyName} logo`} width={40} height={40} className="object-contain pr-2" />
-                  <span>{experience.companyName}</span>
+                  <Image src={experience.companyLogo} alt={`${experience.companyName} logo`} width={40} height={40} className="border-2 border-white object-contain" />
+                  <span className='pl-4'>{experience.companyName}</span>
                 </div>
-                <span className='px-4 drop-shadow-lg'>{experience.title}</span>
+                <span className='px-4 drop-shadow-lg -mr-4'>{experience.title}</span>
                 <span className="ml-2 drop-shadow-lg">{openIndex === index ? '-' : '+'}</span>
               </button>
 
