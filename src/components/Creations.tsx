@@ -3,26 +3,17 @@ import Link from 'next/link';
 import Image from 'next/image';
 
 // Import images for light and dark modes
-import FrontendImage1Light from '@/assets/fe_img1_light.jpg';
-import FrontendImage1Dark from '@/assets/fe_img1_dark.jpg';
-import FrontendImage2Light from '@/assets/fe_img2_light.jpg';
-import FrontendImage2Dark from '@/assets/fe_img2_dark.jpg';
-import FrontendImage3Light from '@/assets/fe_img3_light.jpg';
-import FrontendImage3Dark from '@/assets/fe_img3_dark.jpg';
+import FrontendImage1Light from '@/assets/fe_img1.jpg';
+import FrontendImage2Light from '@/assets/fe_img2.jpg';
+import FrontendImage3Light from '@/assets/fe_img3.png';
 
 import GraphicImage1Light from '@/assets/gd_img1_light.jpg';
-import GraphicImage1Dark from '@/assets/gd_img1_dark.jpg';
 import GraphicImage2Light from '@/assets/gd_img2_light.jpg';
-import GraphicImage2Dark from '@/assets/gd_img2_dark.jpg';
 import GraphicImage3Light from '@/assets/gd_img3_light.jpg';
-import GraphicImage3Dark from '@/assets/gd_img3_dark.jpg';
 
 import VideoImage1Light from '@/assets/ve_img1.jpg';
-import VideoImage1Dark from '@/assets/ve_img1.jpg';
 import VideoImage2Light from '@/assets/ve_img2.jpg';
-import VideoImage2Dark from '@/assets/ve_img2.jpg';
 import VideoImage3Light from '@/assets/ve_img3.jpg';
-import VideoImage3Dark from '@/assets/ve_img3.jpg';
 
 interface CreationsProps {
   isDarkMode: boolean;
@@ -34,59 +25,50 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
   const projectData = [
     {
       category: 'Front-End Dev',
-      imageLight: FrontendImage1Light,
-      imageDark: FrontendImage1Dark,
+      image: FrontendImage1Light,
       link: 'https://github.com/karti3k/my-personal-portfolio-project/blob/main/README.md',
       liveDemo: 'https://kartikbhatia.vercel.app/',
     },
     {
       category: 'Front-End Dev',
-      imageLight: FrontendImage2Light,
-      imageDark: FrontendImage2Dark,
+      image: FrontendImage2Light,
       link: 'https://github.com/karti3k/personal-portfolio-project-2.0/blob/main/README.md',
       liveDemo: 'https://bhatiakartik.vercel.app/',
     },
     {
       category: 'Front-End Dev',
-      imageLight: FrontendImage3Light,
-      imageDark: FrontendImage3Dark,
+      image: FrontendImage3Light,
       link: 'https://github.com/karti3k/Employee-Activity-Dashboard/blob/main/README.md',
       liveDemo: '',
     },
     {
       category: 'Graphic Design',
-      imageLight: GraphicImage1Light,
-      imageDark: GraphicImage1Dark,
+      image: GraphicImage1Light,
       link: 'https://www.behance.net/gallery/179476323/Some-of-my-poster-designs-and-logo-designs',
     },
     {
       category: 'Graphic Design',
-      imageLight: GraphicImage2Light,
-      imageDark: GraphicImage2Dark,
+      image: GraphicImage2Light,
       link: 'https://www.behance.net/gallery/184804873/Jainism-Website-Design-Idea',
     },
     {
       category: 'Graphic Design',
-      imageLight: GraphicImage3Light,
-      imageDark: GraphicImage3Dark,
+      image: GraphicImage3Light,
       link: 'https://www.behance.net/gallery/180831449/Expense-Manger-Web-App-UI-Design-Idea-',
     },
     {
       category: 'Video Editing',
-      imageLight: VideoImage1Light,
-      imageDark: VideoImage1Dark,
+      image: VideoImage1Light,
       link: 'https://youtu.be/ZSl-AeR_eMo?si=GLzk-DXAD1ythsvg',
     },
     {
       category: 'Video Editing',
-      imageLight: VideoImage2Light,
-      imageDark: VideoImage2Dark,
+      image: VideoImage2Light,
       link: 'https://youtu.be/iW4pwtymFWs?si=PeQ67Yts1vXyIhXE',
     },
     {
       category: 'Video Editing',
-      imageLight: VideoImage3Light,
-      imageDark: VideoImage3Dark,
+      image: VideoImage3Light,
       link: 'https://youtu.be/CNXPG9z8kAs?si=Tk3PsjnR1xyZqKpa',
     },
   ];
@@ -142,7 +124,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
               className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
             >
               <Image
-                src={isDarkMode ? project.imageDark : project.imageLight}
+                src={project.image}
                 alt={`${selected} project ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
