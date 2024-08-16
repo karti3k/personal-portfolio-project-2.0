@@ -118,14 +118,14 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
           {getProjects().map((project, index) => (
             <div
               key={index}
-              className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-full relative`}
+              className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
             >
               <Image
                 src={project.image}
                 alt={`${selected} project ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
-                className="w-full h-full rounded-full"
+                className="w-full h-full rounded-3xl"
               />
               <div className="hidden group-hover:flex absolute bottom-4 w-full justify-evenly">
                 <Link href={project.link} passHref target="_blank">
