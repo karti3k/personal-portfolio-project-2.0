@@ -52,7 +52,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
   return (
     <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white'}`}>
       <button
-        className={`lg:mb-1 rounded-3xl md:pr-2 border-2 border-white lg:hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green text-custom-blue-green lg:dark:hover:text-white lg:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 lg:hover:text-slate-600 border-white'}`}
+        className={`lg:mb-1 rounded-3xl md:pr-2 border-2 lg:hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green text-custom-blue-green lg:dark:hover:text-white lg:hover:text-white dark:bg-black bg-black' : 'text-white bg-custom-blue-40 lg:hover:text-slate-600 border-white'}`}
         onClick={toggleDarkMode}
       >
         <Image src={modeButtonIcon} alt='sun/moon' className='rounded-3xl inline md:pr-1 w-7 h-7 md:w-11 md:h-10' />
@@ -119,8 +119,6 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
               <Image src={YouTubeSVG} alt='s-3' width={20} height={20} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
               YouTube
             </Link>
-            <Link href={'https://www.behance.net/kartikbhatia23'} target="_blank" className={`ml-1 md:ml-0 flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green dark:hover:bg-gray-800 ' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}><Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />Behance</Link>
-            <Link href={'https://www.behance.net/kartikbhatia23'} target="_blank" className={`ml-1 md:ml-0 flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green dark:hover:bg-gray-800 ' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}><Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />Behance</Link>
             <Link href={'https://www.behance.net/kartikbhatia23'} target="_blank" className={`ml-1 md:ml-0 flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green dark:hover:bg-gray-800 ' : 'text-white hover:bg-slate-300'} block p-2 md:px-4 md:py-1 text-sm`}><Image src={BehanceSVG} alt='s-4' width={20} height={20} className={`inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />Behance</Link>
           </div>)}
         <div className='hidden sm:flex items-center'>
