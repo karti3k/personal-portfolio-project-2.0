@@ -50,7 +50,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
 
   return (
-    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'dark:border-custom-blue-green' : 'border-white'}`}>
+    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black bg-custom-black' : 'bg-custom-blue'} w-full h-14 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 jua-font border-b ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white'}`}>
       <button
         className={`lg:mb-1 rounded-3xl md:pr-2 border-2 border-white lg:hover:text-slate-600 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green text-custom-blue-green lg:dark:hover:text-white dark:bg-black' : 'text-white bg-custom-blue-40 lg:hover:text-slate-600 border-white'}`}
         onClick={toggleDarkMode}
