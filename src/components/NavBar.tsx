@@ -99,14 +99,14 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
       <div className='relative'>
         <button
-          className={`text-sm px-2 py-1 font-semibold rounded-3xl border-2 sm:hidden ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green dark:bg-custom-very-light-black bg-custom-very-light-black dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-blue-40 border-white text-white'}`}
+          className={`text-sm px-2 pt-1 font-semibold rounded-3xl border-2 sm:hidden ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green dark:bg-custom-very-light-black bg-custom-very-light-black dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-blue-40 border-white text-white'}`}
           onClick={toggleMenu}
         >
           Connect
         </button>
 
         {isMenuOpen && (
-          <div ref={menuRef} className={`absolute flex flex-col items-start right-0 pt-2 mt-5 w-47 ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black' : 'bg-[#a4ccfc]'} rounded-md shadow-lg z-20`}>
+          <div ref={menuRef} className={`absolute flex flex-col items-start right-0 pt-2 mt-5 w-47 ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black' : 'bg-custom-light-blue'} rounded-md shadow-lg z-20`}>
             <Link href={'https://www.linkedin.com/in/kartik-bhatia-13a172229/'} target="_blank" className={`flex flex-col justify-center items-center ${isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green' : 'text-white hover:bg-slate-300'} block px-2 md:px-4 md:py-1 text-sm`}>
               <Image src={LinkedInSVG} alt='s-1' width={19} height={19} className={`ml-1 inline hover:scale-110 pr-1 ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
               LinkedIn

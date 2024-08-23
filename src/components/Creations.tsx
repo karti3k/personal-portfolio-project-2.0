@@ -79,7 +79,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
       } anekDevanagari-font`}
     >
       <h2
-        className={`text-center anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-[#FDFD96]`}
+        className={`text-center anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-[#AFE1AF]`}
       >
         <u>Creations</u>:
       </h2>
@@ -94,29 +94,29 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
           } flex justify-around items-center w-[90%] lg:w-[60%] h-14 rounded-3xl border-2 text-xs md:text-sm lg:text-lg`}
         >
           <button
-            className={`rounded-3xl w-1/3 ${selected === 'Front-End Dev' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-l-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-l-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-light-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
+            className={`rounded-3xl w-1/3 ${selected === 'Front-End Dev' ? (isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green drop-shadow-2xl border-2 border-l-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-l-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green h-12 dark:bg-custom-light-black bg-custom-light-black dark:border-custom-blue-green border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
             onClick={() => setSelected('Front-End Dev')}
           >
-            <span className={`border-b-2 ${selected === 'Front-End Dev' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Front-End Dev</span>
+            <span className={`border-b-2 ${selected === 'Front-End Dev' ? (isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white') : 'border-none'}`}>Front-End Dev</span>
           </button>
           <button
-            className={`w-1/3 h-14 ${selected === 'Graphic Design' ? (isDarkMode ? 'drop-shadow-2xl rounded-3xl dark:bg-custom-very-light-black bg-custom-very-light-black border-2 dark:border-custom-blue-green' : 'drop-shadow-2xl border-2 rounded-3xl bg-custom-blue-40 border-white') : (isDarkMode ? 'rounded-r-none rounded-l-none border-y-2 dark:bg-custom-light-black dark:border-custom-blue-green' : 'border-y-2 rounded-r-none rounded-l-none bg-custom-blue border-white')}`}
+            className={`w-1/3 h-14 ${selected === 'Graphic Design' ? (isDarkMode ? 'drop-shadow-2xl rounded-3xl dark:bg-custom-very-light-black bg-custom-very-light-black border-2 dark:border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'drop-shadow-2xl border-2 rounded-3xl bg-custom-blue-40 border-white') : (isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green rounded-r-none rounded-l-none border-y-2 dark:bg-custom-light-black bg-custom-light-black dark:border-custom-blue-green border-custom-blue-green' : 'border-y-2 rounded-r-none rounded-l-none bg-custom-blue border-white')}`}
             onClick={() => setSelected('Graphic Design')}
           >
-            <span className={`border-b-2 ${selected === 'Graphic Design' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Graphic Design</span>
+            <span className={`border-b-2 ${selected === 'Graphic Design' ? (isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white') : 'border-none'}`}>Graphic Design</span>
           </button>
           <button
-            className={`rounded-3xl w-1/3 ${selected === 'Video Editing' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-r-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-r-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-light-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
+            className={`rounded-3xl w-1/3 ${selected === 'Video Editing' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-r-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-r-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-light-black bg-custom-light-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
             onClick={() => setSelected('Video Editing')}
           >
-            <span className={`border-b-2 ${selected === 'Video Editing' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Video Editing</span>
+            <span className={`border-b-2 ${selected === 'Video Editing' ? (isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white') : 'border-none'}`}>Video Editing</span>
           </button>
         </div>
         <div className='mt-6 w-full lg:w-[95%] h-full rounded-3xl flex flex-col lg:flex-row justify-center items-center gap-4'>
           {getProjects().map((project, index) => (
             <div
               key={index}
-              className={`border-2 ${isDarkMode ? 'dark:bg-custom-very-light-black dark:border-none border-none drop-shadow-2xl' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
+              className={`border-2 ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-none border-none drop-shadow-2xl' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
             >
               <Image
                 src={project.image}
@@ -127,7 +127,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
               />
               <div className="hidden group-hover:flex absolute bottom-4 w-full justify-evenly">
                 <Link href={project.link} passHref target="_blank">
-                  <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'dark:bg-custom-light-black dark:text-custom-blue-green dark:border-custom-blue-green hover:dark:bg-custom-very-light-black hover:bg-custom-very-light-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
+                  <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'dark:bg-custom-light-black bg-custom-light-black dark:text-custom-blue-green text-custom-blue-green dark:border-custom-blue-green border-custom-blue-green hover:dark:bg-custom-very-light-black hover:bg-custom-very-light-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
                     Learn More
                   </button>
                 </Link>

@@ -68,7 +68,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
 
   return (
     <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'dark:bg-custom-light-black bg-custom-light-black' : 'bg-custom-blue'} anekDevanagari-font pb-10`}>
-      <h2 className={`anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-[#AFE1AF]`}>
+      <h2 className={`anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-custom-light-blue`}>
         <u>Experience</u>:
       </h2>
 

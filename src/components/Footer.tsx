@@ -73,7 +73,7 @@ const Footer: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           Let&apos;s connect
         </button>
 
-        <div className="text-sm text-center text-white md:hidden mt-4">
+        <div className={`text-sm text-center ${isDarkMode ? 'text-custom-blue-green':'text-white'} md:hidden mt-4`}>
           © {currentYear} Kartik Bhatia. All rights reserved.
         </div>
       </div>
