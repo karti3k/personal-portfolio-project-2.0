@@ -15,7 +15,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
     const [isDeleting, setIsDeleting] = useState(false);
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100);
-    const toRotate = ["A Front-End Web Developer", "A Graphic Designer..", "A Video Editor..."];
+    const toRotate = ["I'm a Front-End Web Developer", "I'm a Graphic Designer..", "I'm a Video Editor..."];
     const period = 2000;
 
     const tick = useCallback(() => {
@@ -55,11 +55,11 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
             <div className='flex flex-col md:flex-row md:items-center'>
             <div className='md:w-1/2 w-full'>
                 <div className='md:pt-12 lg:pt-0 md:p-4 flex flex-col pl-8 pr-8 md:pr-0 md:pl-12 lg:pl-32'>
-                    <h1 className={`anekDevanagari-font font-medium md:font-semibold text-3xl md:text-4xl w-full h-24 md:h-32 lg:h-28 drop-shadow-lg text-center`}>
+                    <h1 className={`anekDevanagari-font font-medium md:font-semibold text-3xl md:text-4xl w-full h-24 md:h-32 lg:h-28 drop-shadow-lg text-center md:text-left`}>
                         <span className={`text-2xl md:text-4xl ${isDarkMode ? 'text-custom-sky-blue' : 'text-white'}`}>
                             {`Hi! I'm Kartik Bhatia.`}
                         </span>
-                        <span className={`txt-rotat text-3xl text-left font-normal md:font-semibold ${isDarkMode ? 'text-custom-blue-green' : 'text-custom-sky-blue'}`} data-period="1000" data-rotate='[ "A Front-End Web Developer", "A Graphic Designer", "A Video Editor" ]'>
+                        <span className={`txt-rotat text-2xl md:text-4xl text-left font-normal md:font-semibold ${isDarkMode ? 'text-custom-blue-green' : 'text-custom-sky-blue'}`} data-period="1000" data-rotate="[ 'I\'m a Front-End Developer', 'I\'m a Graphic Designer', 'I\'m a Video Editor' ]">
                             <span className="block">{text}</span>
                         </span>
                     </h1>

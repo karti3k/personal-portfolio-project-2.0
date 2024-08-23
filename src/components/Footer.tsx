@@ -28,7 +28,7 @@ const Footer: React.FC<{ isDarkMode: boolean }> = ({ isDarkMode }) => {
           Go to top
         </button>
 
-        <div className="text-sm text-center text-white hidden md:block">
+        <div className={`text-sm text-center ${isDarkMode ? 'text-custom-blue-green':'text-white'} hidden md:block`}>
           © {currentYear} Kartik Bhatia. All rights reserved.
         </div>
 
