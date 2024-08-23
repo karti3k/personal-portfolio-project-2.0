@@ -75,7 +75,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
       <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between w-full space-y-4 md:space-y-0">
         {experiences.map((experience, index) => (
           <div key={index} className="w-full md:w-[30%] space-y-4">
-            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border border-custom-blue-green border border-custom-blue-green dark:text-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-light-blue border border-white text-white'}`}>
+            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border border-custom-blue-green border border-custom-blue-green dark:text-custom-sky-blue  text-custom-sky-blue' : 'bg-custom-light-blue border border-white text-white'}`}>
               
               {/* Button to toggle experience item open/close */}
               <button
@@ -93,7 +93,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
               {/* Section to expand/collapse experience details */}
               <div className={`overflow-hidden transition-all ${openIndex === index ? 'max-h-full' : 'max-h-0'}`}>
                 <span className="text-xs pl-2 mt-2 drop-shadow-md">{experience.duration}</span>
-                <ul className="list-disc p-4 space-y-2 anekDevanagari-font text-sm drop-shadow-lg">
+                <ul className={`list-disc p-4 space-y-2 anekDevanagari-font text-sm drop-shadow-lg`}>
                   {experience.details.map((detail, i) => (
                     <li key={i}>{detail}</li>
                   ))}

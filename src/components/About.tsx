@@ -63,7 +63,7 @@ const About: React.FC<AboutProps> = ({ isDarkMode }) => {
                             <span className="block">{text}</span>
                         </span>
                     </h1>
-                    <p className={`text-white text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg pb-6 md:pb-0`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
+                    <p className={`${isDarkMode?'dark:text-custom-sky-blue text-custom-sky-blue':'text-white'} text-justify lg:pr-8 md:pr-6 anekDevanagari-font drop-shadow-lg md:text-lg pb-6 md:pb-0`}>I am passionate about crafting stunning, user-friendly interfaces and dedicated to creating captivating web applications and websites. My goal is to enhance the user experience through visually appealing designs that make digital products a joy to use. Additionally, I engage in graphic design and video editing alongside my main focus.</p>
                 </div>
             </div>
             <div className='w-full md:w-1/2 h-max md:h-[75%] flex justify-center  lg:items-center'>
