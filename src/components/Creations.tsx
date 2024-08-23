@@ -85,12 +85,12 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
       </h2>
       <div
         className={`drop-shadow-lg mt-1 w-full lg:h-[70%] h-screen border rounded-3xl flex flex-col items-center py-6 ${
-          isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'
+          isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green border-custom-blue-green' : 'bg-custom-blue-40 border-white'
         }`}
       >
         <div
           className={`${
-            isDarkMode ? 'dark:bg-custom-light-black dark:text-custom-blue-green dark:border-custom-blue-green' : 'bg-custom-blue text-white border-white'
+            isDarkMode ? 'dark:bg-custom-light-black bg-custom-light-black dark:text-custom-blue-green text-custom-blue-green dark:border-custom-blue-green border-custom-blue-green' : 'bg-custom-blue text-white border-white'
           } flex justify-around items-center w-[90%] lg:w-[60%] h-14 rounded-3xl border-2 text-xs md:text-sm lg:text-lg`}
         >
           <button
