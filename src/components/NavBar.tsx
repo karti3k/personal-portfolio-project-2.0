@@ -50,12 +50,12 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
 
 
   return (
-    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black bg-custom-black' : 'bg-[#427698]'} w-full h-14 md:h-16 flex items-center justify-between px-8 md:px-12 lg:px-32 anekDevanagari-font border-b ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white'}`}>
+    <nav className={`backdrop-blur-3xl z-50 sticky top-0 ${isDarkMode ? 'dark:bg-custom-black bg-custom-black' : 'bg-[#427698]'} w-full h-14 md:h-16 flex items-center justify-between py-8 px-8 md:px-12 lg:px-32 anekDevanagari-font border-b ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green' : 'border-white'}`}>
       <button
-        className={`lg:mb-1 rounded-3xl md:pr-2 border-2 text-sm font-medium lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green text-custom-blue-green dark:bg-custom-very-light-black bg-custom-very-light-black' : 'text-white bg-custom-blue-40 border-white'}`}
+        className={`lg:mb-1 rounded-3xl md:pr-2 border-2 text-sm font-semibold lg:font-semibold ${isDarkMode ? 'dark:border-custom-blue-green border-custom-blue-green text-custom-blue-green dark:bg-custom-very-light-black bg-custom-very-light-black' : 'text-white bg-custom-blue-40 border-white'}`}
         onClick={toggleDarkMode}
       >
-        <Image src={modeButtonIcon} alt='sun/moon' className='rounded-3xl inline md:pr-1 w-7 h-7 md:w-11 md:h-10' />
+        <Image src={modeButtonIcon} alt='sun/moon' className='rounded-3xl inline  mr-1 w-6 h-6 md:w-11 md:h-10' />
         <span className='hidden sm:inline'>Change Theme</span>
         <span className='md:hidden pr-2'>Theme</span>
       </button>
@@ -66,7 +66,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
             to="about-section"
             smooth={true}
             duration={500}
-            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'About' ? (isDarkMode ? 'dark:bg-custom-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green dark:hover:border-custom-blue-green hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green border-custom-black' : 'border-[#427698] text-white')}`}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl pt-2 px-2 md:rounded-none md:p-0 ${selected === 'About' ? (isDarkMode ? 'dark:bg-custom-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green dark:hover:border-custom-blue-green hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:text-custom-blue-green text-custom-blue-green border-custom-black' : 'border-[#427698] text-white')}`}
             onClick={() => setSelected('About')}
           >
             <Image src={AboutSVG} alt='i-1' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
@@ -77,7 +77,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
             to="creations-section"
             smooth={true}
             duration={500}
-            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Creations' ? (isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green dark: hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:border-custom-black border-custom-black dark:text-custom-blue-green text-custom-blue-green' : 'border-[#427698] text-white')}`}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl pt-2 px-2 md:rounded-none md:p-0 ${selected === 'Creations' ? (isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green dark: hover:border-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:border-custom-black border-custom-black dark:text-custom-blue-green text-custom-blue-green' : 'border-[#427698] text-white')}`}
             onClick={() => setSelected('Creations')}
           >
             <Image src={CreationsSVG} alt='icon2' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
@@ -88,7 +88,7 @@ const NavBar: React.FC<NavBarProps> = ({ isDarkMode, toggleDarkMode }) => {
             to="experience-section"
             smooth={true}
             duration={500}
-            className={`hover:cursor-pointer md:border-b-2 rounded-3xl p-1 px-2 md:rounded-none md:p-0 ${selected === 'Experience' ? (isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:border-custom-black border-custom-black dark:text-custom-blue-green text-custom-blue-green' : 'border-[#427698] text-white')}`}
+            className={`hover:cursor-pointer md:border-b-2 rounded-3xl pt-2 px-2 md:rounded-none md:p-0 ${selected === 'Experience' ? (isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black md:dark:bg-custom-black md:bg-custom-black dark:border-custom-blue-green border-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-blue-40 md:bg-[#427698] border-white hover:border-white text-white') : (isDarkMode ? 'dark:border-custom-black border-custom-black dark:text-custom-blue-green text-custom-blue-green' : 'border-[#427698] text-white')}`}
             onClick={() => setSelected('Experience')}
           >
             <Image src={ExperienceSVG} alt='icon3' width={20} height={20} className={`inline ${isDarkMode ? 'custom-svg-color-for-darkmode' : ''}`} />
