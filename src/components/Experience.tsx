@@ -68,14 +68,14 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
 
   return (
     <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'dark:bg-custom-light-black bg-custom-light-black' : 'bg-custom-blue'} anekDevanagari-font pb-10`}>
-      <h2 className={`anekDevanagari-font font-semibold text-4xl md:text-5xl pb-8 opacity-80 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-[#AFE1AF]' : 'text-white'}`}>
+      <h2 className={`anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-[#AFE1AF]`}>
         <u>Experience</u>:
       </h2>
 
       <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between w-full space-y-4 md:space-y-0">
         {experiences.map((experience, index) => (
           <div key={index} className="w-full md:w-[30%] space-y-4">
-            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black border border-custom-blue-green dark:text-custom-blue-green' : 'bg-custom-light-blue border border-white text-white'}`}>
+            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border border-custom-blue-green border border-custom-blue-green dark:text-custom-blue-green dark:text-custom-blue-green text-custom-blue-green' : 'bg-custom-light-blue border border-white text-white'}`}>
               
               {/* Button to toggle experience item open/close */}
               <button
@@ -83,7 +83,7 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
                 onClick={() => toggleExperience(index)}
               >
                 <div className="flex items-center justify-center px-2 drop-shadow-md">
-                  <Image src={experience.companyLogo} alt={`${experience.companyName} logo`} width={40} height={40} className="border-2 border-white object-contain" />
+                  <Image src={experience.companyLogo} alt={`${experience.companyName} logo`} width={40} height={40} className={`border-2 ${isDarkMode ?'border-custom-blue-green':'border-white'} object-contain`} />
                   <span className='pl-4'>{experience.companyName}</span>
                 </div>
                 <span className='px-4 drop-shadow-lg -mr-4'>{experience.title}</span>

@@ -79,9 +79,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
       } anekDevanagari-font`}
     >
       <h2
-        className={`text-center anekDevanagari-font font-semibold text-4xl md:text-5xl pb-8 opacity-80 md:h-20 drop-shadow-lg ${
-          isDarkMode ? 'text-[#FDFD96]' : 'text-white'
-        }`}
+        className={`text-center anekDevanagari-font font-semibold text-3xl md:text-4xl pb-8 opacity-80 md:h-20 drop-shadow-lg text-[#FDFD96]`}
       >
         <u>Creations</u>:
       </h2>
