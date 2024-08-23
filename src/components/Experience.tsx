@@ -67,19 +67,19 @@ const Experience: React.FC<ExperienceProps> = ({ isDarkMode }) => {
   };
 
   return (
-    <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'dark:bg-custom-black' : 'bg-custom-blue'} jua-font pb-10`}>
-      <h2 className={`jua-font text-4xl md:text-5xl pb-8 opacity-30 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-custom-green' : 'text-white'}`}>
-        Experience:
+    <section id="experience-section" className={`pt-16 lg:pt-0 py-8 px-8 md:px-12 lg:px-32 flex flex-col justify-center items-center md:justify-start md:flex-col ${isDarkMode ? 'dark:bg-custom-light-black bg-custom-light-black' : 'bg-custom-blue'} anekDevanagari-font pb-10`}>
+      <h2 className={`anekDevanagari-font font-semibold text-4xl md:text-5xl pb-8 opacity-80 md:h-20 drop-shadow-lg ${isDarkMode ? 'text-[#AFE1AF]' : 'text-white'}`}>
+        <u>Experience</u>:
       </h2>
 
       <div className="flex flex-col md:flex-row md:flex-wrap md:justify-between w-full space-y-4 md:space-y-0">
         {experiences.map((experience, index) => (
           <div key={index} className="w-full md:w-[30%] space-y-4">
-            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-black border border-custom-blue-green dark:text-custom-blue-green' : 'bg-[#a4ccfc] border border-white text-white'}`}>
+            <li className={`list-none py-4 px-2 rounded-xl drop-shadow-lg ${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black border border-custom-blue-green dark:text-custom-blue-green' : 'bg-custom-light-blue border border-white text-white'}`}>
               
               {/* Button to toggle experience item open/close */}
               <button
-                className={`${isDarkMode ? 'dark:bg-black' : 'bg-[#a4ccfc]'} flex justify-between items-center w-full font-normal p-2`}
+                className={`${isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black' : 'bg-custom-light-blue'} flex justify-between items-center w-full font-medium p-2`}
                 onClick={() => toggleExperience(index)}
               >
                 <div className="flex items-center justify-center px-2 drop-shadow-md">

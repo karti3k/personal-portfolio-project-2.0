@@ -23,7 +23,7 @@
 
 }
 
-@keyframes float {
+/* @keyframes float {
   0% {
       transform: translateY(0);
   }
@@ -37,4 +37,17 @@
 
 .float-animation {
   animation: float 4s ease-in-out infinite;
+} */
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.fade-animation {
+  animation: fadeInOut 4s ease-in-out infinite;
 }

@@ -75,40 +75,40 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
   return (
     <section id='creations-section'
       className={`md:-mt-12 pt-6 md:pt-0 w-full h-max lg:h-screen px-8 md:px-12 lg:px-32 flex flex-col justify-start ${
-        isDarkMode ? 'bg-custom-black' : 'bg-custom-blue'
-      } jua-font`}
+        isDarkMode ? 'bg-custom-light-black' : 'bg-custom-blue'
+      } anekDevanagari-font`}
     >
       <h2
-        className={`text-center jua-font text-4xl md:text-5xl pb-8 opacity-30 md:h-20 drop-shadow-lg ${
-          isDarkMode ? 'text-custom-green' : 'text-white'
+        className={`text-center anekDevanagari-font font-semibold text-4xl md:text-5xl pb-8 opacity-80 md:h-20 drop-shadow-lg ${
+          isDarkMode ? 'text-[#FDFD96]' : 'text-white'
         }`}
       >
-        Creations:
+        <u>Creations</u>:
       </h2>
       <div
         className={`drop-shadow-lg mt-1 w-full lg:h-[70%] h-screen border rounded-3xl flex flex-col items-center py-6 ${
-          isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'
+          isDarkMode ? 'dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'
         }`}
       >
         <div
           className={`${
-            isDarkMode ? 'dark:bg-custom-black dark:text-custom-blue-green dark:border-custom-blue-green' : 'bg-custom-blue text-white border-white'
+            isDarkMode ? 'dark:bg-custom-light-black dark:text-custom-blue-green dark:border-custom-blue-green' : 'bg-custom-blue text-white border-white'
           } flex justify-around items-center w-[90%] lg:w-[60%] h-14 rounded-3xl border-2 text-xs md:text-sm lg:text-lg`}
         >
           <button
-            className={`rounded-3xl w-1/3 ${selected === 'Front-End Dev' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-l-0 h-14 dark:bg-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-l-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
+            className={`rounded-3xl w-1/3 ${selected === 'Front-End Dev' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-l-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-l-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-light-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
             onClick={() => setSelected('Front-End Dev')}
           >
             <span className={`border-b-2 ${selected === 'Front-End Dev' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Front-End Dev</span>
           </button>
           <button
-            className={`w-1/3 h-14 ${selected === 'Graphic Design' ? (isDarkMode ? 'drop-shadow-2xl rounded-3xl dark:bg-black border-2 dark:border-custom-blue-green' : 'drop-shadow-2xl border-2 rounded-3xl bg-custom-blue-40 border-white') : (isDarkMode ? 'rounded-r-none rounded-l-none border-y-2 dark:bg-custom-black dark:border-custom-blue-green' : 'border-y-2 rounded-r-none rounded-l-none bg-custom-blue border-white')}`}
+            className={`w-1/3 h-14 ${selected === 'Graphic Design' ? (isDarkMode ? 'drop-shadow-2xl rounded-3xl dark:bg-custom-very-light-black bg-custom-very-light-black border-2 dark:border-custom-blue-green' : 'drop-shadow-2xl border-2 rounded-3xl bg-custom-blue-40 border-white') : (isDarkMode ? 'rounded-r-none rounded-l-none border-y-2 dark:bg-custom-light-black dark:border-custom-blue-green' : 'border-y-2 rounded-r-none rounded-l-none bg-custom-blue border-white')}`}
             onClick={() => setSelected('Graphic Design')}
           >
             <span className={`border-b-2 ${selected === 'Graphic Design' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Graphic Design</span>
           </button>
           <button
-            className={`rounded-3xl w-1/3 ${selected === 'Video Editing' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-r-0 h-14 dark:bg-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-r-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
+            className={`rounded-3xl w-1/3 ${selected === 'Video Editing' ? (isDarkMode ? 'drop-shadow-2xl border-2 border-r-0 h-14 dark:bg-custom-very-light-black bg-custom-very-light-black dark:border-custom-blue-green' : 'drop-shadow-2xl h-14 border-2 border-r-0 bg-custom-blue-40 border-white') : (isDarkMode ? 'h-12 dark:bg-custom-light-black dark:border-custom-blue-green' : 'h-12 bg-custom-blue border-white')}`}
             onClick={() => setSelected('Video Editing')}
           >
             <span className={`border-b-2 ${selected === 'Video Editing' ? (isDarkMode ? 'dark:border-custom-blue-green' : 'border-white') : 'border-none'}`}>Video Editing</span>
@@ -118,7 +118,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
           {getProjects().map((project, index) => (
             <div
               key={index}
-              className={`border-2 ${isDarkMode ? 'dark:bg-black dark:border-custom-blue-green' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
+              className={`border-2 ${isDarkMode ? 'dark:bg-custom-very-light-black dark:border-none border-none drop-shadow-2xl' : 'bg-custom-blue-40 border-white'} group w-[85%] md:w-[60%] lg:w-1/3 h-full rounded-3xl relative`}
             >
               <Image
                 src={project.image}
@@ -129,7 +129,7 @@ const Creations: React.FC<CreationsProps> = ({ isDarkMode }) => {
               />
               <div className="hidden group-hover:flex absolute bottom-4 w-full justify-evenly">
                 <Link href={project.link} passHref target="_blank">
-                  <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'dark:bg-black dark:text-custom-blue-green dark:border-custom-blue-green hover:bg-custom-blue-green hover:text-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
+                  <button className={`py-2 px-4 rounded-lg ${isDarkMode ? 'dark:bg-custom-light-black dark:text-custom-blue-green dark:border-custom-blue-green hover:dark:bg-custom-very-light-black hover:bg-custom-very-light-black' : 'bg-custom-blue-40 text-white border-white hover:bg-white hover:text-custom-blue'} border`}>
                     Learn More
                   </button>
                 </Link>
